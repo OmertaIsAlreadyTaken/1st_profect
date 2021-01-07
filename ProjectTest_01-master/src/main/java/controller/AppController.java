@@ -41,7 +41,7 @@ public class AppController {
             } else if (command.equalsIgnoreCase(HELP)) {
                 helper.help();
             } else if (command.equalsIgnoreCase(EXIT)) {
-                System.exit(0);
+                helper.exit();
 
             } else if (command.equalsIgnoreCase(READ)) {
 
