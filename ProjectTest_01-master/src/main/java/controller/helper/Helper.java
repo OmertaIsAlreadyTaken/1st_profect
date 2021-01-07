@@ -1,7 +1,7 @@
-package helper;
+package controller.helper;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import blogic.filetyps.string.executable.Executable;
+import blogic.filetyps.executable.Executable;
 import blogic.fileutils.Constants;
 import blogic.fileutils.FileUtils;
 import person.Person;
@@ -69,6 +69,7 @@ public class Helper {
         }
         System.out.println(ENTER_COMMAND);
     }
+
 
     public void exit() {
         System.exit(0);

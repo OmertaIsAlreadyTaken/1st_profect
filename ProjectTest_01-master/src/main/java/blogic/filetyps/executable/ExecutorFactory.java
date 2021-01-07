@@ -1,4 +1,4 @@
-package blogic.filetyps.string.executable;
+package blogic.filetyps.executable;
 
 import blogic.filetyps.binary.BinaryExecutor;
 import blogic.filetyps.string.csv.StringFormatExecutorCSV;
