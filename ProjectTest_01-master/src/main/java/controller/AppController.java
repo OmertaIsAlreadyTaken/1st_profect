@@ -1,11 +1,10 @@
 package controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import blogic.filetyps.string.executable.Executable;
-import blogic.filetyps.string.executable.ExecutorFactory;
-import blogic.fileutils.Constants;
+import blogic.filetyps.executable.Executable;
+import blogic.filetyps.executable.ExecutorFactory;
 import blogic.fileutils.FileUtils;
-import helper.Helper;
+import controller.dialog.Dialog;
+import controller.helper.Helper;
 import person.Person;
 
 import java.util.ArrayList;
@@ -18,6 +17,7 @@ public class AppController {
     private final ExecutorFactory executorFactory;
     private final Scanner scanner;
     private final Helper helper;
+    private final Dialog dialog;
     private final FileUtils fileUtils;
 
     public AppController() {
@@ -25,6 +25,7 @@ public class AppController {
         helper = new Helper();
         scanner = new Scanner(System.in);
         fileUtils = new FileUtils();
+        dialog = new Dialog();
     }
 
     public void run() {
@@ -44,26 +45,7 @@ public class AppController {
                 helper.exit();
 
             } else if (command.equalsIgnoreCase(READ)) {
-
-                if (fileName.equalsIgnoreCase(SWITCH)) {
-                    fileName = fileUtils.fileNameCreator();
-                    executor = executorFactory.getInstance();
-                    personList.clear();
-                } else if (!fileUtils.isFileEmpty(fileName)) {
-                    List<Person> tempList = new ArrayList<>();
-                    try {
-                        tempList = executor.read(fileName);
-                    } catch (JsonProcessingException e) {
-                        e.printStackTrace();
-                    }
-
-                    for (Person p : tempList) {
-                        System.out.println(p);
-                    }
-                } else {
-                    System.out.println(FILE_IS_EMPTY);
-                }
-                System.out.println(ENTER_COMMAND);
+                dialog.dialogFileReader(fileName, fileUtils, executor);
 
             } else if (command.equalsIgnoreCase(SWITCH)) {
                 fileName = fileUtils.fileNameCreator();
@@ -73,58 +55,14 @@ public class AppController {
                 helper.save(personList, fileName, executor);
 
             } else if (command.equalsIgnoreCase(UPDATE)) {
-
-                if (!fileUtils.isFileEmpty(fileName)) {
-                    try {
-                        personList = executor.read(fileName);
-                    } catch (JsonProcessingException e) {
-                        e.printStackTrace();
-                    }
-
-                } else {
-                    System.out.println(FILE_IS_EMPTY);
-
-                }
-
-                System.out.println(Constants.ENTER_ID);
-                int id = scanner.nextInt();
-
-                executor.update(personList, id);
-
-                System.out.println(ENTER_COMMAND);
+                personList = dialog.updateDialog(fileName, fileUtils, personList, executor);
 
             } else if (command.equalsIgnoreCase(SORT)) {
-
-                if (!fileUtils.isFileEmpty(fileName)) {
-                    try {
-                        personList = executor.read(fileName);
-                    } catch (JsonProcessingException e) {
-                        e.printStackTrace();
-                    }
-
-                } else {
-                    System.out.println(FILE_IS_EMPTY);
-
-                }
-
-                executor.sort(personList, fileName);
+                dialog.sortDialog(fileName, fileUtils, personList, executor);
 
             } else if (command.equalsIgnoreCase(DELETE)) {
+                personList = dialog.deleteDialog(fileName, fileUtils, personList, executor);
 
-                if (!fileUtils.isFileEmpty(fileName)) {
-                    try {
-                        personList = executor.read(fileName);
-                    } catch (JsonProcessingException e) {
-                        e.printStackTrace();
-                    }
-                    executor.delete(personList);
-
-                } else {
-                    System.out.println(FILE_IS_EMPTY);
-
-                }
-
-                System.out.println(ENTER_COMMAND);
             }
         }
     }

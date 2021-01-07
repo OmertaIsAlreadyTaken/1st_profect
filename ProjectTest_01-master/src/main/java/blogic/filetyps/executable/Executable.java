@@ -1,4 +1,4 @@
-package blogic.filetyps.string.executable;
+package blogic.filetyps.executable;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import person.Person;
@@ -10,7 +10,7 @@ public interface Executable {
 
     List<Person> read(String fileName) throws JsonProcessingException;
 
-    List<Person> update(List<Person> arrayList, int id);
+    List<Person> update(List<Person> arrayList);
 
     List<Person> delete( List<Person> arrayList);
 

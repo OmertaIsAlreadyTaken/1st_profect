@@ -6,7 +6,7 @@ import com.opencsv.bean.StatefulBeanToCsv;
 import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
-import blogic.filetyps.string.executable.Executable;
+import blogic.filetyps.executable.Executable;
 import blogic.fileutils.Constants;
 import blogic.fileutils.IdComparator;
 import person.Person;
@@ -28,7 +28,7 @@ public class StringFormatExecutorCSV implements Executable {
     public boolean write(String fileName, List<Person> personList) {
 
         try {
-            Writer writer  = new FileWriter(fileName);
+            Writer writer = new FileWriter(fileName);
             StatefulBeanToCsv sbc = new StatefulBeanToCsvBuilder(writer)
                     .withSeparator(CSVWriter.DEFAULT_SEPARATOR)
                     .build();
@@ -58,7 +58,11 @@ public class StringFormatExecutorCSV implements Executable {
         return personList;
     }
 
-    public List<Person> update(List<Person> personList, int id) {
+    public List<Person> update(List<Person> personList) {
+        Scanner scannerId = new Scanner(System.in);
+        System.out.println(Constants.ENTER_ID);
+        int id = scannerId.nextInt();
+
         Iterator<Person> iterator = personList.iterator();
 
         System.out.println(ENTER_PERSON_DATA_UPDATE);
@@ -79,10 +83,11 @@ public class StringFormatExecutorCSV implements Executable {
             }
         }
         System.out.println(FILE_WAS_UPD);
+        System.out.println(ENTER_COMMAND);
         return personList;
     }
 
-    public List<Person> delete( List<Person> personList) {
+    public List<Person> delete(List<Person> personList) {
         System.out.println(Constants.ENTER_ID);
         int id = scanner.nextInt();
         Iterator<Person> iterator = personList.iterator();
@@ -97,12 +102,13 @@ public class StringFormatExecutorCSV implements Executable {
             }
         }
         System.out.println(Constants.FILE_ELEMENT_WAS_DEL);
+        System.out.println(ENTER_COMMAND);
         return personList;
     }
 
     public boolean sort(List<Person> personList, String fileName) {
         try {
-            Writer writer  = new FileWriter(fileName);
+            Writer writer = new FileWriter(fileName);
             IdComparator idComparator = new IdComparator();
             StatefulBeanToCsv sbc = new StatefulBeanToCsvBuilder(writer)
                     .withSeparator(CSVWriter.DEFAULT_SEPARATOR)
@@ -110,6 +116,8 @@ public class StringFormatExecutorCSV implements Executable {
             personList.sort(idComparator);
             sbc.write(personList);
             writer.close();
+            System.out.println(SORTED);
+            System.out.println(ENTER_COMMAND);
             return true;
         } catch (IOException e) {
             e.printStackTrace();
@@ -118,7 +126,7 @@ public class StringFormatExecutorCSV implements Executable {
         } catch (CsvDataTypeMismatchException e) {
             e.printStackTrace();
         }
-        System.out.println(SORTED);
+
         return false;
     }
 }

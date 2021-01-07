@@ -1,6 +1,6 @@
 package blogic.filetyps.string;
 
-import blogic.filetyps.string.executable.Executable;
+import blogic.filetyps.executable.Executable;
 import blogic.filetyps.string.stringconverter.IPersonStringConverter;
 import blogic.fileutils.Constants;
 import blogic.fileutils.FileUtils;
@@ -37,7 +37,11 @@ public class StringFormatExecutor implements Executable {
         return personList;
     }
 
-    public List<Person> update(List<Person> personList, int id) {
+    public List<Person> update(List<Person> personList) {
+        Scanner scannerId = new Scanner(System.in);
+        System.out.println(Constants.ENTER_ID);
+        int id = scannerId.nextInt();
+
         Iterator<Person> iterator = personList.iterator();
 
         System.out.println(ENTER_PERSON_DATA_UPDATE);
@@ -58,6 +62,7 @@ public class StringFormatExecutor implements Executable {
             }
         }
         System.out.println(FILE_WAS_UPD);
+        System.out.println(ENTER_COMMAND);
         return personList;
     }
 
@@ -77,6 +82,7 @@ public class StringFormatExecutor implements Executable {
             }
         }
         System.out.println(Constants.FILE_ELEMENT_WAS_DEL);
+        System.out.println(ENTER_COMMAND);
         return personList;
     }
 
@@ -86,6 +92,7 @@ public class StringFormatExecutor implements Executable {
         String content = personStringConverter.personToString(personList);
         personList.clear();
         System.out.println(SORTED);
+        System.out.println(ENTER_COMMAND);
         return fileUtils.saveToFile(fileName, content);
     }
 }
