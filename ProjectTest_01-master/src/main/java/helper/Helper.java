@@ -69,4 +69,16 @@ public class Helper {
         }
         System.out.println(ENTER_COMMAND);
     }
+
+//    public int compareTo(List<Person> person){
+//        return person.
+////        if(person.equals(person1)){
+////            return person.hashCode() == person1.hashCode()? 1 : -1;
+////        }else{
+////            return person1.
+////        }
+//
+//
+//    }
+
 }

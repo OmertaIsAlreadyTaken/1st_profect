@@ -6,6 +6,7 @@ import crud.filetyps.ExecutorFactory;
 import crud.fileutils.Constants;
 import crud.fileutils.FileUtils;
 import helper.Helper;
+import helper.IdComparator;
 import person.Person;
 
 import java.util.ArrayList;
@@ -43,7 +44,6 @@ public class AppController {
 
             }else if(command.equalsIgnoreCase(HELP)){
                 System.out.println(HELPER);
-                continue;
             }
             else if (command.equalsIgnoreCase(EXIT)) {
                 System.exit(0);
@@ -96,7 +96,25 @@ public class AppController {
 
                 System.out.println(ENTER_COMMAND);
 
-            } else if (command.equalsIgnoreCase(DELETE)) {
+            }
+            else if (command.equalsIgnoreCase(SORT)){
+                if (!fileUtils.isFileEmpty(fileName)) {
+                    try {
+                        personList = executor.read(fileName);
+                    } catch (JsonProcessingException e) {
+                        e.printStackTrace();
+                    }
+
+                } else {
+                    System.out.println(FILE_IS_EMPTY);
+
+                }
+
+                executor.sort(personList, fileName);
+
+                System.out.println(SORTED);
+            }
+            else if (command.equalsIgnoreCase(DELETE)) {
 
                 if (!fileUtils.isFileEmpty(fileName)) {
                     try {

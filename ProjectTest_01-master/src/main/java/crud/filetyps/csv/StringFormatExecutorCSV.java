@@ -1,5 +1,6 @@
 package crud.filetyps.csv;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.opencsv.CSVWriter;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.StatefulBeanToCsv;
@@ -8,6 +9,7 @@ import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 import crud.filetyps.Executable;
 import crud.fileutils.Constants;
+import helper.IdComparator;
 import person.Person;
 
 import java.io.*;
@@ -97,5 +99,26 @@ public class StringFormatExecutorCSV implements Executable {
         }
         System.out.println(Constants.FILE_ELEMENT_WAS_DEL);
         return arrayList;
+    }
+
+    public boolean sort(List<Person> arrayList, String fileName) {
+        try {
+            Writer writer  = new FileWriter(fileName);
+            IdComparator idComparator = new IdComparator();
+            StatefulBeanToCsv sbc = new StatefulBeanToCsvBuilder(writer)
+                    .withSeparator(CSVWriter.DEFAULT_SEPARATOR)
+                    .build();
+            arrayList.sort(idComparator);
+            sbc.write(arrayList);
+            writer.close();
+            return true;
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (CsvRequiredFieldEmptyException e) {
+            e.printStackTrace();
+        } catch (CsvDataTypeMismatchException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }

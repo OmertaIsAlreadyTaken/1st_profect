@@ -4,11 +4,11 @@ import crud.filetyps.Executable;
 import crud.fileutils.Constants;
 import crud.fileutils.FileUtils;
 import crud.string.IPersonStringConverter;
+import helper.Helper;
+import helper.IdComparator;
 import person.Person;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import static crud.fileutils.Constants.ENTER_PERSON_DATA_UPDATE;
 import static crud.fileutils.Constants.FILE_WAS_UPD;
@@ -17,6 +17,7 @@ public class StringFormatExecutorJSON implements Executable {
     private final FileUtils fileUtils;
     private final Scanner scanner;
     private final IPersonStringConverter personStringConverter;
+
 
     public StringFormatExecutorJSON(IPersonStringConverter personStringConverter) {
         this.personStringConverter = personStringConverter;
@@ -77,5 +78,14 @@ public class StringFormatExecutorJSON implements Executable {
         }
         System.out.println(Constants.FILE_ELEMENT_WAS_DEL);
         return arrayList;
+    }
+
+    public boolean sort(List<Person> arrayList, String fileName){
+        IdComparator idComparator = new IdComparator();
+        arrayList.sort(idComparator);
+        String content;
+        content = personStringConverter.personToString(arrayList);
+        arrayList.clear();
+        return fileUtils.saveToFile(fileName, content);
     }
 }

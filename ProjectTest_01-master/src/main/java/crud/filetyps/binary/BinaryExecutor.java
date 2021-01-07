@@ -1,7 +1,9 @@
 package crud.filetyps.binary;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import crud.filetyps.Executable;
 import crud.fileutils.Constants;
+import helper.IdComparator;
 import person.Person;
 
 import java.io.*;
@@ -91,5 +93,23 @@ public class BinaryExecutor implements Executable {
         }
         System.out.println(Constants.FILE_ELEMENT_WAS_DEL);
         return arrayList;
+    }
+
+    public boolean sort(List<Person> arrayList, String fileName) {
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        IdComparator idComparator = new IdComparator();
+        arrayList.sort(idComparator);
+        try {
+            fos = new FileOutputStream(fileName);
+            oos = new ObjectOutputStream(fos);
+            oos.writeObject(arrayList);
+            oos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return true;
     }
 }

@@ -13,4 +13,6 @@ public interface Executable {
     List<Person> update(List<Person> arrayList, int id);
 
     List<Person> delete(int id, List<Person> arrayList);
+
+    boolean sort(List<Person> arrayList, String fileName);
 }
