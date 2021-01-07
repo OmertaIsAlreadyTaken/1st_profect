@@ -1,16 +1,16 @@
 package helper;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import crud.filetyps.Executable;
-import crud.fileutils.Constants;
-import crud.fileutils.FileUtils;
+import blogic.filetyps.string.executable.Executable;
+import blogic.fileutils.Constants;
+import blogic.fileutils.FileUtils;
 import person.Person;
 
 import java.util.List;
 import java.util.Scanner;
 
-import static crud.fileutils.Constants.*;
-import static crud.fileutils.Constants.ENTER_COMMAND;
+import static blogic.fileutils.Constants.*;
+import static blogic.fileutils.Constants.ENTER_COMMAND;
 
 public class Helper {
     private final Scanner scanner;
@@ -70,15 +70,12 @@ public class Helper {
         System.out.println(ENTER_COMMAND);
     }
 
-//    public int compareTo(List<Person> person){
-//        return person.
-////        if(person.equals(person1)){
-////            return person.hashCode() == person1.hashCode()? 1 : -1;
-////        }else{
-////            return person1.
-////        }
-//
-//
-//    }
+    public void exit() {
+        System.exit(0);
+    }
 
+    public String help() {
+        return HELPER;
+    }
 }
+

@@ -1,39 +1,35 @@
 package controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import crud.filetyps.Executable;
-import crud.filetyps.ExecutorFactory;
-import crud.fileutils.Constants;
-import crud.fileutils.FileUtils;
+import blogic.filetyps.string.executable.Executable;
+import blogic.filetyps.string.executable.ExecutorFactory;
+import blogic.fileutils.Constants;
+import blogic.fileutils.FileUtils;
 import helper.Helper;
-import helper.IdComparator;
 import person.Person;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static crud.fileutils.Constants.*;
+import static blogic.fileutils.Constants.*;
 
 public class AppController {
-    private final ControllerUtils controllerUtils;
     private final ExecutorFactory executorFactory;
     private final Scanner scanner;
     private final Helper helper;
-    private List<Person> personList;
     private final FileUtils fileUtils;
 
     public AppController() {
         executorFactory = new ExecutorFactory();
-        controllerUtils = new ControllerUtils();
         helper = new Helper();
         scanner = new Scanner(System.in);
-        personList = new ArrayList<>();
         fileUtils = new FileUtils();
     }
 
     public void run() {
-        String fileName = controllerUtils.fileCreator();
+        List<Person> personList = new ArrayList<>();
+        String fileName = fileUtils.fileNameCreator();
         Executable executor = executorFactory.getInstance();
         while (true) {
 
@@ -42,17 +38,17 @@ public class AppController {
             if (command.equalsIgnoreCase(CREATE)) {
                 helper.personCreator(fileName, executor, personList);
 
-            }else if(command.equalsIgnoreCase(HELP)){
-                System.out.println(HELPER);
-            }
-            else if (command.equalsIgnoreCase(EXIT)) {
+            } else if (command.equalsIgnoreCase(HELP)) {
+                helper.help();
+            } else if (command.equalsIgnoreCase(EXIT)) {
                 System.exit(0);
 
             } else if (command.equalsIgnoreCase(READ)) {
 
                 if (fileName.equalsIgnoreCase(SWITCH)) {
-                    fileName = controllerUtils.fileCreator();
+                    fileName = fileUtils.fileNameCreator();
                     executor = executorFactory.getInstance();
+                    personList.clear();
                 } else if (!fileUtils.isFileEmpty(fileName)) {
                     List<Person> tempList = new ArrayList<>();
                     try {
@@ -70,8 +66,9 @@ public class AppController {
                 System.out.println(ENTER_COMMAND);
 
             } else if (command.equalsIgnoreCase(SWITCH)) {
-                fileName = controllerUtils.fileCreator();
+                fileName = fileUtils.fileNameCreator();
                 executor = executorFactory.getInstance();
+                personList.clear();
             } else if (command.equalsIgnoreCase(SAVE)) {
                 helper.save(personList, fileName, executor);
 
@@ -96,8 +93,8 @@ public class AppController {
 
                 System.out.println(ENTER_COMMAND);
 
-            }
-            else if (command.equalsIgnoreCase(SORT)){
+            } else if (command.equalsIgnoreCase(SORT)) {
+
                 if (!fileUtils.isFileEmpty(fileName)) {
                     try {
                         personList = executor.read(fileName);
@@ -112,9 +109,7 @@ public class AppController {
 
                 executor.sort(personList, fileName);
 
-                System.out.println(SORTED);
-            }
-            else if (command.equalsIgnoreCase(DELETE)) {
+            } else if (command.equalsIgnoreCase(DELETE)) {
 
                 if (!fileUtils.isFileEmpty(fileName)) {
                     try {
@@ -122,9 +117,7 @@ public class AppController {
                     } catch (JsonProcessingException e) {
                         e.printStackTrace();
                     }
-                    System.out.println(Constants.ENTER_ID);
-                    int id = scanner.nextInt();
-                    executor.delete(id, personList);
+                    executor.delete(personList);
 
                 } else {
                     System.out.println(FILE_IS_EMPTY);
@@ -135,5 +128,4 @@ public class AppController {
             }
         }
     }
-
 }
