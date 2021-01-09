@@ -4,10 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.opencsv.bean.CsvBindByPosition;
 
 import java.io.Serializable;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
-
 
 public class Person implements Serializable {
     @JsonIgnoreProperties(ignoreUnknown = true)
@@ -21,7 +17,6 @@ public class Person implements Serializable {
     private String age;
     @CsvBindByPosition(position = 4)
     private String city;
-
 
     public void setId(int id) {
         this.id = id;

@@ -90,6 +90,7 @@ public class StringFormatExecutorCSV implements Executable {
     public List<Person> delete(List<Person> personList) {
         System.out.println(Constants.ENTER_ID);
         int id = scanner.nextInt();
+
         Iterator<Person> iterator = personList.iterator();
 
         while (iterator.hasNext()) {

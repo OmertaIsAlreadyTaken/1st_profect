@@ -16,11 +16,11 @@ import static blogic.fileutils.Constants.*;
 public class BinaryExecutor implements Executable {
     private final Scanner scanner;
 
-   public BinaryExecutor(){
-        scanner =new Scanner(System.in);
+    public BinaryExecutor() {
+        scanner = new Scanner(System.in);
     }
 
-    public boolean write(String fileName, List<Person> personList){
+    public boolean write(String fileName, List<Person> personList) {
         FileOutputStream fos;
         ObjectOutputStream oos;
         try {
@@ -36,7 +36,7 @@ public class BinaryExecutor implements Executable {
         return true;
     }
 
-    public ArrayList<Person> read(String fileName){
+    public ArrayList<Person> read(String fileName) {
         FileInputStream fis;
         ObjectInputStream ois;
         ArrayList<Person> listPerson = new ArrayList<>();
@@ -53,6 +53,7 @@ public class BinaryExecutor implements Executable {
         }
         return listPerson;
     }
+
     public List<Person> update(List<Person> personList) {
         Scanner scannerId = new Scanner(System.in);
         System.out.println(Constants.ENTER_ID);
@@ -65,11 +66,11 @@ public class BinaryExecutor implements Executable {
 
         String[] array = personData.split(" ");
 
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
 
             Person iterPerson = iterator.next();
 
-            if (iterPerson.getId() == id){
+            if (iterPerson.getId() == id) {
                 iterPerson.setFirstName(array[0]);
                 iterPerson.setLastName(array[1]);
                 iterPerson.setAge(array[2]);
@@ -81,16 +82,17 @@ public class BinaryExecutor implements Executable {
         System.out.println(ENTER_COMMAND);
         return personList;
     }
-    public List<Person> delete(List<Person> personList){
+
+    public List<Person> delete(List<Person> personList) {
         System.out.println(Constants.ENTER_ID);
         int id = scanner.nextInt();
         Iterator<Person> iterator = personList.iterator();
 
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
 
             Person iterPerson = iterator.next();
 
-            if (iterPerson.getId() == id){
+            if (iterPerson.getId() == id) {
                 iterator.remove();
                 break;
             }

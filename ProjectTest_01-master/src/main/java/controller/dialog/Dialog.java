@@ -1,7 +1,6 @@
 package controller.dialog;
 
 import blogic.filetyps.executable.Executable;
-import blogic.filetyps.executable.ExecutorFactory;
 import blogic.fileutils.FileUtils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import person.Person;

@@ -23,6 +23,7 @@ public class StringFormatExecutor implements Executable {
         scanner = new Scanner(System.in);
     }
 
+
     public boolean write(String fileName, List<Person> personList) {
         String content;
         content = personStringConverter.personToString(personList);
