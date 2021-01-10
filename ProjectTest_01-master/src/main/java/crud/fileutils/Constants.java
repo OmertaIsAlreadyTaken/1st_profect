@@ -30,7 +30,11 @@ public static final String PERSON_WAS_CREATE = "Person was create.";
 public static final String ILLEGAL_PERSON_ID = "This id is reserved.";
 public static final String ENTER_PERSON_DATA_UPDATE = "Enter Person data: name, second name, age, city.";
 public static final String HELP = "help";
-public static final String HELPER = "This program creates list of persons for you\n" +
+public static final String HELPER = "Cthulhu fhtagn\n" +
+        "Whoever feels his life devoid of meaning is not only unhappy, but also hardly viable\n" +
+        "\n" +
+        "\n" +
+        "This program creates list of persons for you\n" +
         "Write down your FILE NAME and DATA TYPE you need\n" +
         "Available types of data ARE\n" +
         "JSON CSV XML YAML BINARY\n" +
@@ -45,6 +49,9 @@ public static final String HELPER = "This program creates list of persons for yo
         "\n" +
         "SAVE to save changes\n" +
         "SWITCH to switch among the other file names and data types\n" +
-        "EXIT to exit\n";
+        "SORT to sort your data  by ID parameter\n" +
+        "EXIT to exit\n" +
+        "\n";
 
 }
+

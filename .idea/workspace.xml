@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4a885d7b-072d-4509-9137-a788b90b1694" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1" beforeDir="false" afterPath="$PROJECT_DIR$/1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/ProjectTest_01-master.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_xml_2_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_yaml_2_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_11_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__com_fasterxml_woodstox_woodstox_core_6_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__com_google_code_gson_gson_2_8_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__com_opencsv_opencsv_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_9_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__commons_collections_commons_collections_3_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__jakarta_activation_jakarta_activation_api_1_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__jakarta_xml_bind_jakarta_xml_bind_api_2_3_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__org_apache_commons_commons_text_1_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_4_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/libraries/Maven__org_yaml_snakeyaml_1_26.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTest_01-master/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/src/main/java/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTest_01-master/src/main/java/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/src/main/java/controller/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTest_01-master/src/main/java/controller/AppController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/src/main/java/crud/fileutils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTest_01-master/src/main/java/crud/fileutils/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/target/classes/controller/AppController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTest_01-master/target/classes/controller/AppController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTest_01-master/target/classes/crud/fileutils/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTest_01-master/target/classes/crud/fileutils/Constants.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1mseHjls7XS5RhjbTXSmcNAP3gc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../IdeaProjects" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Client" />
+      <module name="ProjectTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Client" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4a885d7b-072d-4509-9137-a788b90b1694" name="Default Changelist" comment="" />
+      <created>1610286640115</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610286640115</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ProjectTest$Client.ic" NAME="Client Coverage Results" MODIFIED="1610011984243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

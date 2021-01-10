@@ -44,6 +44,7 @@ public class AppController {
 
             }else if(command.equalsIgnoreCase(HELP)){
                 System.out.println(HELPER);
+                System.out.println(ENTER_COMMAND);
             }
             else if (command.equalsIgnoreCase(EXIT)) {
                 System.exit(0);
